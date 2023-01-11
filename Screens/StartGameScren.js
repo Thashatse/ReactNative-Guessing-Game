@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     width: 75,
+    marginBottom: 15,
   },
 
   buttonsContainer: {
