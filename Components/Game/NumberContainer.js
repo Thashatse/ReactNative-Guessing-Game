@@ -10,17 +10,17 @@ function NumberContainer({children}) {
 
 const styles = StyleSheet.create({
     container: {
-        borderWidth: 6,
-        borderColor: Colours.secondary500,
-        padding: 24,
-        margin: 24,
-        borderRadius: 8,
+        // borderWidth: 6,
+        // borderColor: Colours.secondary500,
+        padding: 12,
+        margin: 12,
+        // borderRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
     },
 
     numberText:{
-        color: Colours.secondary500,
+        color: Colours.primary500,
         fontSize: 36,
         fontWeight: 'bold',
     },
