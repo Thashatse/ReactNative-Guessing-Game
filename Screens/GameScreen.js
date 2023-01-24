@@ -23,6 +23,7 @@ let maxBoundary = 100;
 function GameScreen({ userNumber, onGameOver }) {
   const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
+  const [guessRounds, setGuessRounds] = useState([]);
 
   useEffect(() => {
     console.log(
@@ -32,9 +33,14 @@ function GameScreen({ userNumber, onGameOver }) {
       parseInt(currentGuess) === parseInt(userNumber)
     );
     if (parseInt(currentGuess) === parseInt(userNumber)) {
-      onGameOver();
+      onGameOver(guessRounds.length);
     }
   }, [currentGuess, userNumber, onGameOver]);
+
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []);
 
   function nextGuessHandler(direction) {
     //direction => ''lower', ''greater'
@@ -62,6 +68,7 @@ function GameScreen({ userNumber, onGameOver }) {
       currentGuess
     );
     setCurrentGuess(newRandomNumber);
+    setGuessRounds((prevGuessCount) => [newRandomNumber, ...prevGuessCount]);
   }
 
   return (
@@ -75,17 +82,21 @@ function GameScreen({ userNumber, onGameOver }) {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              <Ionicons name="md-remove" size={24} color="white"/>
+              <Ionicons name="md-remove" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              <Ionicons name="md-add" size={24} color="white"/>
+              <Ionicons name="md-add" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
       </Card>
-      <Text>Log Rounds</Text>
+      <View>
+        {guessRounds.map((guessRounds) => (
+          <Text key={guessRounds}>{guessRounds}</Text>
+        ))}
+      </View>
     </View>
   );
 }

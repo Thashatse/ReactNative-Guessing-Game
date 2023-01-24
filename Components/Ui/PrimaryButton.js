@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
+    fontFamily: 'poppins',
     color: "white",
     textAlign: "center",
     marginHorizontal: 10,

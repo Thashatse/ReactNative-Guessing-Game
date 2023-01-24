@@ -70,12 +70,12 @@ const styles = StyleSheet.create({
 
   numberInput: {
     height: 50,
+    fontFamily: 'poppins-bold',
     fontSize: 32,
     borderBottomColor: Colours.primary500,
     borderBottomWidth: 2,
     color: Colours.primary500,
     marginVertical: 8,
-    fontWeight: "bold",
     textAlign: "center",
     width: 75,
     marginBottom: 15,
