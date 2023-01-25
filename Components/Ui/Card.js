@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 16,
     marginTop: 25,
+    marginBottom: 25,
     marginHorizontal: 24,
     borderRadius: 8,
     backgroundColor: Colours.secondary500,
