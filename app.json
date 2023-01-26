@@ -3,7 +3,7 @@
     "name": "GuessingGame",
     "slug": "GuessingGame",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "defaultcrea",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {

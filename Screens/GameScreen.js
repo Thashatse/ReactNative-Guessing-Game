@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Alert, FlatList } from "react-native";
+import { View, Dimensions, StyleSheet, Alert, FlatList } from "react-native";
 import { useState, useEffect } from "react";
 import Title from "../Components/Ui/Title";
 import Card from "../Components/Ui/Card";
@@ -116,6 +116,8 @@ function GameScreen({ userNumber, onGameOver }) {
 
 export default GameScreen;
 
+const deviceWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -124,7 +126,7 @@ const styles = StyleSheet.create({
   },
 
   instructionsText: {
-    marginBottom: 12,
+    marginBottom: deviceWidth > 380 ? 16 : 12,
   },
 
   buttonsContainer: {
